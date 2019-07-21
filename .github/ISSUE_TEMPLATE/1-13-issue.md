@@ -16,7 +16,7 @@ inspired by or based upon content from Mojang or third-party projects that are b
 
 **Description**:
 
-> Include a short/medium summary of the feature or improvement. Keep it short as to not overwhelm newcommers.
+> Include a short/medium summary of the feature or improvement. Keep it short as to not overwhelm newcomers.
 If the issue cannot be explained 1-3 sentences, consider opening more issues.
 
 **Reference Documentation**:
