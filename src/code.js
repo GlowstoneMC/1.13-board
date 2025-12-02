@@ -1,0 +1,8 @@
+ {
+  "code": "// Function to adjust misc NBT values based on given criteria
+function adjustNbtValues(nbtData) {\n  // Check if nbtData is an object\n  if (typeof nbtData !== 'object' || nbtData === null) {\n    throw new Error('Invalid NBT data');\n  }\n\n  // Iterate through the keys in nbtData and adjust values based on criteria\n  for (let key in nbtData) {\n    if (nbtData.hasOwnProperty(key)) {\n      switch(key) {\n        case 'health':\n          nbtData[key] = Math.min(100, nbtData[key]); // Cap health at 100\n          break;\n        case 'mana':\n          nbtData[key] = Math.min(200, nbtData[key]); // Cap mana at 200\n          break;\n        case 'strength':\n          nbtData[key] = Math.max(0, nbtData[key]); // Ensure strength is not negative\n          break;\n        default:\n          break;\n      }\n    }\n  }\n}\n\n// Example usage\nconst nbt = { health: 120, mana: 250, strength: -5 };\nadjustNbtValues(nbt);\nconsole.log(nbt); // Output should be { health: 100, mana: 200, strength: 0 }\n",
+  "filename": "adjustNbtValues.js",
+  "explanation": "This function adjusts the NBT values in an object based on specific criteria. It ensures that the 'health' value is capped at 100, 'mana' is capped at 200, and 'strength' is not negative.",
+  "testCode": "// Test cases for adjustNbtValues\ntest('Adjusts NBT values correctly', () => {\n  const nbt = { health: 120, mana: 250, strength: -5 };\n  adjustNbtValues(nbt);\n  expect(nbt.health).toBe(100);\n  expect(nbt.mana).toBe(200);\n  expect(nbt.strength).toBe(0);\n});",
+  "testFilename": "testAdjustNbtValues.js"
+}
